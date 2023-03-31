@@ -4,9 +4,11 @@ class Solution(object):
         :type n: int
         :rtype: int
         """
-        def fib_2(n, ht):
-            if n in ht: return ht[n]
-            else:
-                ht[n] = fib_2(n-1, ht) + fib_2(n-2, ht)
-                return ht[n]
-        return fib_2(n, {0:0, 1:1})
+        if n <= 1: return n
+        p1 = 0
+        p2 = 1
+        for i in range(1, n):
+            temp = p1 + p2
+            p1 = p2
+            p2 = temp
+        return p2
