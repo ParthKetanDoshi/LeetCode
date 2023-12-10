@@ -9,10 +9,9 @@ var findSubstring = function(s, words) {
     words = words.sort();
     for(let i = 0, j = words[0].length * words.length; j <= s.length; i++, j++) {
         let checkWords = s.substring(i, j).match(regex).sort();
-        let wordsChecked = false;
+        let wordsChecked = true;
         for(let k = 0; k < words.length; k++) {
-            if(words[k] === checkWords[k]) wordsChecked = true;
-            else {
+            if(words[k] !== checkWords[k]) {
                 wordsChecked = false;
                 break;
             }
