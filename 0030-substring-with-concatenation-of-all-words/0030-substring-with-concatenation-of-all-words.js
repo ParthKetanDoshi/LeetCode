@@ -5,10 +5,11 @@
  */
 var findSubstring = function(s, words) {
     let result = [];
+    const substringLength = words[0].length * words.length;
     const regex = new RegExp(".{" + words[0].length + "}", 'g');
     words = words.sort();
-    for(let i = 0, j = words[0].length * words.length; j <= s.length; i++, j++) {
-        let checkWords = s.substring(i, j).match(regex).sort();
+    for(let i = 0; i <= s.length - substringLength; i++) {
+        let checkWords = s.substring(i, i + substringLength).match(regex).sort();
         let wordsChecked = true;
         for(let k = 0; k < words.length; k++) {
             if(words[k] !== checkWords[k]) {
