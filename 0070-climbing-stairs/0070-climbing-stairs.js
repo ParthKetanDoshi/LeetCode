@@ -5,9 +5,7 @@
 var climbStairs = function(n) {
     let a = 2, res = n > 3 ? 3 : n;
     while(n > 3) {
-        let temp = a + res;
-        a = res;
-        res = temp;
+        [a, res] = [res, res + a]
         n--;
     }
     return res;
