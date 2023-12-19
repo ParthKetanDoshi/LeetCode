@@ -3,10 +3,10 @@
  * @return {number}
  */
 var climbStairs = function(n) {
-    let res = [2, n > 3 ? 3 : n]
+    let a = 2, res = n > 3 ? 3 : n;
     while(n > 3) {
-        [res[0], res[1]] = [res[1], res[0] + res[1]]
+        [a, res] = [res, res + a]
         n--;
     }
-    return res[1];
+    return res;
 };
