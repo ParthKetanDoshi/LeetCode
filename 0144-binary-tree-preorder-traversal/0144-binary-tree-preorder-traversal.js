@@ -13,15 +13,15 @@
 var preorderTraversal = function(root) {
     const result = [];
     
-    var traverse = function(node) {
+    var preorderTraverse = function(node) {
         if(!node) return;
         
         result.push(node.val);
-        traverse(node.left);
-        traverse(node.right);
+        preorderTraverse(node.left);
+        preorderTraverse(node.right);
     }
     
-    traverse(root);
+    preorderTraverse(root);
     
     return result;
 };
