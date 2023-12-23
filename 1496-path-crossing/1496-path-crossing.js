@@ -8,16 +8,11 @@ var isPathCrossing = function(path) {
     const route = new Map();
     route.set(1000010000, 0);
     for(let i=0, len=path.length; i<len; i++) {
-        switch(path[i]) {
-            case 'N': position += 1;
-                break;
-            case 'S': position -= 1;
-                break;
-            case 'E': position += 100000;
-                break;
-            case 'W': position -= 100000;
-                break;
-        }
+        if(path[i] === 'N') position += 1;
+        else if(path[i] === 'S') position -= 1;
+        else if(path[i] === 'E') position += 100000;
+        else if(path[i] === 'W') position -= 100000;
+        
         if(route.get(position) !== undefined) return true;
         route.set(position, 0);
     }
