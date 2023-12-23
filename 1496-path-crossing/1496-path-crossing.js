@@ -3,7 +3,6 @@
  * @return {boolean}
  */
 var isPathCrossing = function(path) {
-    path = path.split('');
     let position = 1000010000, len=path.length;
     const route = new Map();
     route.set(1000010000, 0);
