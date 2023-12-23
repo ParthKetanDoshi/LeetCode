@@ -4,7 +4,6 @@
  */
 var isPathCrossing = function(path) {
     let position = 0;
-    path = path.split("");
     const directions = new Map([
         ["N", 1],
         ["S", -1],
