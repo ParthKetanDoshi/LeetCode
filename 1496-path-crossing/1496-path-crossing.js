@@ -3,9 +3,9 @@
  * @return {boolean}
  */
 var isPathCrossing = function(path) {
-    let position = [0, 0];
+    let position = [10000, 10000];
     const route = new Map();
-    route.set('0,0', '0,0')
+    route.set(1000010000, 0);
     for(let i=0; i<path.length; i++) {
         if(path[i] === 'N') {
             position[1] += 1;
@@ -19,10 +19,9 @@ var isPathCrossing = function(path) {
         else if(path[i] === 'W') {
             position[0] -= 1;
         }
-        
-        if(route.get(position[0] + "," + position[1]) !== undefined) return true;
-        
-        route.set(position[0] + "," + position[1], position[0] + "," + position[1]);
+        let positionVal = parseInt(position[0] + "" + position[1]);
+        if(route.get(positionVal) !== undefined) return true;
+        route.set(positionVal, 0);
     }
     return false;
 };
