@@ -19,7 +19,7 @@ var isPathCrossing = function(path) {
         else if(path[i] === 'W') {
             position[0] -= 1;
         }
-        let positionVal = parseInt(position[0] * 100000 + position[1]);
+        let positionVal = position[0] * 100000 + position[1];
         if(route.get(positionVal) !== undefined) return true;
         route.set(positionVal, 0);
     }
