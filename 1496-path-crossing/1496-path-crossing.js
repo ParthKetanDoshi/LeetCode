@@ -7,7 +7,7 @@ var isPathCrossing = function(path) {
     let position = 1000010000;
     const route = new Map();
     route.set(1000010000, 0);
-    for(let i=0; i<path.length; i++) {
+    for(let i=0, len=path.length; i<len; i++) {
         switch(path[i]) {
             case 'N': position += 1;
                 break;
