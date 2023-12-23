@@ -24,3 +24,5 @@
 	<li><code>path[i]</code> is either <code>'N'</code>, <code>'S'</code>, <code>'E'</code>, or <code>'W'</code>.</li>
 </ul>
 </div>
+
+<h2><a href="https://leetcode.com/problems/path-crossing/discuss/4445604/Runtime-beats-96.40-or-Memory-usage-beats-90.65-or-JavaScript">Discussion Forum Post</a></h2>
