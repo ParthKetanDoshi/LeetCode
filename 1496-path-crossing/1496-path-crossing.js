@@ -3,6 +3,7 @@
  * @return {boolean}
  */
 var isPathCrossing = function(path) {
+    let position = 0;
     const directions = new Map([
         ["N", 1],
         ["S", -1],
@@ -10,7 +11,7 @@ var isPathCrossing = function(path) {
         ["W", -100000]
     ]);
     const route = new Set([0]);
-    for(let i=0, position = 0, len=path.length; i<len; i++) {
+    for(let i=0, len=path.length; i<len; i++) {
         position += directions.get(path[i]);
         if(route.has(position)) return true;
         route.add(position);
