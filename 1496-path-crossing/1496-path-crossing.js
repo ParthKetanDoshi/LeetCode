@@ -9,7 +9,7 @@ var isPathCrossing = function(path) {
     for(let i=0, position = 1000010000, len=path.length; i<len; i++) {
         position += directions.get(path[i]);
         if(route.has(position)) return true;
-        route.add(position, 0);
+        route.add(position);
     }
     return false;
 };
