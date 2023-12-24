@@ -3,7 +3,7 @@
  * @return {number}
  */
 var minOperations = function(s) {
-    let c1 = 0, c2 = 0, i = 0, len = s.length;
+    let c1 = 0, c2 = 0, i, len = s.length;
     for(i = 0; i < len; i += 2) {
         if(s[i] === '0') c1++;
         else c2++;
