@@ -12,5 +12,6 @@ var minOperations = function(s) {
         if(s[i] === '1') c1++;
         else c2++;
     }
-    return c1 < c2 ? c1 : c2;
+    if(c1 < c2) return c1;
+    else return c2;
 };
