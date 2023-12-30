@@ -3,7 +3,7 @@
  * @return {boolean}
  */
 var makeEqual = function(words) {
-    let len = words.length;
+    const len = words.length;
     words = words.join("");
     const frequencyMap = {};
     for(let i = 0; i < words.length; i++) {
@@ -14,6 +14,6 @@ var makeEqual = function(words) {
             frequencyMap[words[i]] = 1;
         }
     }
-    for(let item in frequencyMap) if(frequencyMap[item] % len !== 0) return false;
+    for(i in frequencyMap) if(frequencyMap[i] % len !== 0) return false;
     return true;
 };
