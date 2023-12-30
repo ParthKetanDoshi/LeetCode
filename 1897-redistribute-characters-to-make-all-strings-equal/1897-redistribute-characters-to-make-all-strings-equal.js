@@ -6,8 +6,7 @@ var makeEqual = function(words) {
     const len = words.length;
     words = words.join("");
     const frequencyMap = {};
-    let i;
-    for(i = 0; i < words.length; i++) {
+    for(let i = 0; i < words.length; i++) {
         if(frequencyMap[words[i]]) {
             frequencyMap[words[i]]++;
         }
