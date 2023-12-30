@@ -4,20 +4,19 @@
  */
 var makeEqual = function(words) {
     const len = words.length;
-    if(len === 1) return true;
-    words = words.join("").split("").sort();
-    let currCharCount = 0, currChar = words[0];
-    for(let i = 0; i < words.length; i++) {
-        if(words[i] === currChar) {
-            currCharCount += 1;
+    words = words.join("");
+    const frequencyMap = new Map();
+    let i;
+    for(i = 0; i < words.length; i++) {
+        if(frequencyMap.has(words[i])) {
+            frequencyMap.set(words[i], frequencyMap.get(words[i]) + 1)
         }
         else {
-            if (currCharCount % len !== 0) return false;
-            currCharCount = 0;
-            currChar = words[i];
-            i--;
+            frequencyMap.set(words[i], 1)
         }
     }
-    if(currCharCount % len !== 0) return false;
-    else return true;
+    for(const [key, value] of frequencyMap.entries()) {
+        if(value % len !== 0) return false;
+    }
+    return true;
 };
