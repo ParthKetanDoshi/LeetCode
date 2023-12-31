@@ -3,15 +3,13 @@
  * @return {number}
  */
 var maxLengthBetweenEqualCharacters = function(s) {
-    let res = -1;
-    for(let i = 0; i < s.length; i++) {
-        let sArray = s.split(s[i]);
-        if(sArray.length > 2) {
-            sArray.splice(0, 1);
-            sArray.splice(-1, 1);
-            sArray = sArray.join(s[i]);
-            res = res > sArray.length ? res : sArray.length;
-        }
+    let i, len = s.length, res = -1;
+    let cache = {};
+    for(i = 0; i < len; i++) {
+        cache[s[i]] = i;
+    }
+    for(i = 0; i < len; i++) {
+        if(cache[s[i]] !== i) res = res > (cache[s[i]] - i - 1) ? res : (cache[s[i]] - i - 1);
     }
     return res;
 };
