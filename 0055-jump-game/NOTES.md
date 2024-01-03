@@ -1,1 +1,1 @@
-​
+Implemented Greedy Solution by shifting the goal closer to the starting position based on the condition if it is possible to reach goal from an intermediate position or not.
