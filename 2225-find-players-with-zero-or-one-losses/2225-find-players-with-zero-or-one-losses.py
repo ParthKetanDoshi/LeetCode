@@ -8,9 +8,7 @@ class Solution:
                 players[match[1]] = 1
             else:
                 players[match[1]] += 1
-        result = []
-        result.append([])
-        result.append([])
+        result = [[], []]
         for k, v in players.items():
             if v == 0:
                 result[0].append(k)
