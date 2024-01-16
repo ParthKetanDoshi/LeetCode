@@ -16,10 +16,8 @@ class RandomizedSet:
     def remove(self, val: int) -> bool:
         res = val in self.numMap
         if res:
-            index = self.numMap[val]
-            lastVal = self.numList[-1]
-            self.numMap[lastVal] = index
-            self.numList[index] = lastVal
+            self.numMap[self.numList[-1]] = self.numMap[val]
+            self.numList[self.numMap[val]] = self.numList[-1]
             self.numList.pop()
             del self.numMap[val]
         return res
