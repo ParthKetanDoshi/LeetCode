@@ -4,15 +4,12 @@ class Solution(object):
         :type s: str
         :rtype: str
         """
-        dictionary = {}
-        for character in s:
-            if character in dictionary.keys():
-                dictionary[character] += 1
-            else:
-                dictionary[character] = 1
-        sortedCharacters = sorted(dictionary.items(), key = lambda x:x[1], reverse = True)
-        string = ''
-        for item in sortedCharacters:
-            for i in range(item[1]):
-                string = string + item[0]
-        return string
+        count = Counter(s)
+        buckets = defaultdict(list)
+        for char, cnt in count.items():
+            buckets[cnt].append(char)
+        res = []
+        for i in range(len(s), 0, -1):
+            for c in buckets[i]:
+                res.append(c * i)
+        return "".join(res)
